@@ -16,6 +16,18 @@ class Book:
         """
         self._checked_out_on = checked_out_on
 
+    def is_overdue(self):
+        """
+        method to check if book is overdue.
+        """
+        overdue = False
+
+        if self._checked_out_on is not None:
+            elapsed_days = (date.today() - self._checked_out_on).days
+            overdue = elapsed_days > 14
+
+        return overdue
+
 fellowship_of_the_ring = Book(
     "The Fellowship of the Ring",
     "The Lord of the Rings",
