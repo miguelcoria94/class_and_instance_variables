@@ -50,4 +50,4 @@ fellowship_of_the_ring.checkout(
     checked_out_on=date.fromisoformat("2020-04-01")
 )
 
-print(fellowship_of_the_ring.is_overdue())
+print(fellowship_of_the_ring.loan_duration)
