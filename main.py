@@ -3,6 +3,7 @@ class Book:
         self._title = title
         self._series = series
         self._author = author
+        self._checked_out_on = None
 
     def __repr__(self):
         return f"{self._title} by {self._author}"
