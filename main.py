@@ -1,6 +1,8 @@
 from datetime import date
 
 class Book:
+    loan_duration = 14
+
     def __init__(self, title, series, author):
         self._title = title
         self._series = series
@@ -24,7 +26,7 @@ class Book:
 
         if self._checked_out_on is not None:
             elapsed_days = (date.today() - self._checked_out_on).days
-            overdue = elapsed_days > 14
+            overdue = elapsed_days > self.loan_duration
 
         return overdue
 
