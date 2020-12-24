@@ -12,7 +12,7 @@ class Book:
     def __repr__(self):
         return f"{self._title} by {self._author}"
 
-    def checkout(self, checked_out_on=data.today()):
+    def checkout(self, checked_out_on=date.today()):
         """
         method to checkout a book
         """
@@ -43,3 +43,11 @@ grapes_of_wrath = Book(
 )
 
 print(fellowship_of_the_ring)
+
+print(fellowship_of_the_ring.is_overdue())
+
+fellowship_of_the_ring.checkout(
+    checked_out_on=date.fromisoformat("2020-04-01")
+)
+
+print(fellowship_of_the_ring.is_overdue())
