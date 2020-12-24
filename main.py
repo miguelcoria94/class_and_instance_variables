@@ -1,3 +1,5 @@
+from datetime import date
+
 class Book:
     def __init__(self, title, series, author):
         self._title = title
@@ -8,6 +10,11 @@ class Book:
     def __repr__(self):
         return f"{self._title} by {self._author}"
 
+    def checkout(self, checked_out_on=data.today()):
+        """
+        method to checkout a book
+        """
+        self._checked_out_on = checked_out_on
 
 fellowship_of_the_ring = Book(
     "The Fellowship of the Ring",
